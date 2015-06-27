@@ -14,7 +14,9 @@ if(isset($_POST['user']) and isset($_POST['pass']))
 		{
 			if($_POST['user'] == 'Fyreco' and $_POST['pass'] == '12345')
 			{
-				echo 'El usuario y la contraseña fueron correctos</br>';	
+				session_start();
+				$_SESSION['usuario'] = $_POST['user'];
+				header('location:accedido.php');	
 			}else
 			{
 				header('location:index.php?error=2');
