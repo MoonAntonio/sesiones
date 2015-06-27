@@ -15,6 +15,10 @@ if(isset($_POST['user']) and isset($_POST['pass']))
 			if($_POST['user'] == 'Fyreco' and $_POST['pass'] == '12345')
 			{
 				session_start();
+				if($_POST['sesion'] == 1)
+				{
+					ini_set(session.cookie_lifetime,time() + (60*60*24*365));
+					}
 				$_SESSION['usuario'] = $_POST['user'];
 				header('location:accedido.php');	
 			}else
