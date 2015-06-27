@@ -1,5 +1,5 @@
 <?php
-
+	#Probando nuevo
 	if(isset($_GET['error']))
 	{
 		if($_GET['error'] == 1)
