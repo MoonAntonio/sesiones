@@ -27,7 +27,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-    	<form action="login.php" method="post">
+    	<form action="login2.php" method="post">
         	<label>Usuario: </label><input type="text" name="user" /><br />
             <label>Contraseña: </label><input type="text" name="pass" /><br />
             <label><input type="checkbox" name="sesion" value="1" />Deseo recordar mis datos</label><br />
