@@ -1,8 +1,6 @@
 <?php
 
 	require('/class.Conexion.php');
-
-	$db = new Conexion();
 	
 	$modo = isset($_GET['modo']) ? $_GET['modo'] : 'default';
 	

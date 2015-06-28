@@ -13,6 +13,8 @@ class Acceso
 	
 	public function Login()
 	{
+			$db = new Conexion();
+			$db->query("SELECT nombre,password FROM usuarios WHERE NOMBRE = '$this->user' AND PASSWORD='$this->pass';");
 			
 	}	
 	
