@@ -14,7 +14,7 @@
 				if(!empty($_POST['user']) and !empty($_POST['pass']))
 				{
 					include('/class.Acceso.php');
-					$login = new Acceso();
+					$login = new Acceso($_POST['user'],$_POST['pass']);
 					$login->Login();	
 				}else
 				{
