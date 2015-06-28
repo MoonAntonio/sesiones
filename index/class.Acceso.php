@@ -14,8 +14,19 @@ class Acceso
 	public function Login()
 	{
 			$db = new Conexion();
-			$db->query("SELECT nombre,password FROM usuarios WHERE NOMBRE = '$this->user' AND PASSWORD='$this->pass';");
+			$sql = $db->query("SELECT nombre,password FROM usuarios WHERE NOMBRE = '$this->user' AND PASSWORD='$this->pass';");
+			$dato = $db->recorrer($sql);
+			$dato['nombre'];
+			$dato['password'];
 			
+			if($dato['nombre'] == $this->user and $dato['password'] == $this->pass)
+			{
+				$_SESSION['user'] = $this->user;
+				header('location: acceso.php');	
+			}else
+			{
+				header('location: index.php');
+			}
 	}	
 	
 	public function Registro()
