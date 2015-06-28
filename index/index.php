@@ -11,7 +11,15 @@
 		case 'login':
 			if(isset($_POST['login']))
 			{
-				echo 'Se ha enviado el formulario';	
+				if(!empty($_POST['user']) and !empty($_POST['pass']))
+				{
+					include('/class.Acceso.php');
+					$login = new Acceso();
+					$login->Login();	
+				}else
+				{
+					header('location: index.php');
+				}
 			}else
 			{
 				header('location:index.php');
