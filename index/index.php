@@ -3,6 +3,33 @@
 	require('/class.Conexion.php');
 
 	$db = new Conexion();
+	
+	$modo = isset($_GET['modo']) ? $_GET['modo'] : 'default';
+	
+	switch($modo)
+	{
+		case 'login':
+			if(isset($_POST['login']))
+			{
+				echo 'Se ha enviado el formulario';	
+			}else
+			{
+				header('location:index.php');
+			}
+			break;
+			
+		case 'registro':
+			echo 'registro';
+			break;
+			
+		case 'claveperdida':
+			echo 'clave perdida';
+			break;	
+			
+		default:
+		
+		break;
+	}
 
 ?>
 
